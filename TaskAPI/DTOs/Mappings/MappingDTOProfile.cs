@@ -9,6 +9,7 @@ namespace TaskAPI.DTOs.Mappings
         public MappingDTOProfile() 
         { 
             CreateMap<UserModel, RegisterDTO>().ReverseMap();
+            CreateMap<UserModel, LoginDTO>().ReverseMap();
         }
     }
 }

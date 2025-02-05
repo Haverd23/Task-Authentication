@@ -1,0 +1,147 @@
+.outer {
+    height: 100vh;
+    background: linear-gradient(135deg, #5B73C5, #171C42); /* Gradiente mais suave e moderno */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    background-color: white;
+    display: flex;
+    flex-direction: column; /* Para garantir que os itens fiquem em uma coluna */
+    align-items: center;
+    padding: 30px;
+    width: 400px;
+    border-radius: 15px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1); /* Sombra mais suave e moderna */
+}
+
+.title {
+    font-size: 36px;
+    font-weight: 700;
+    font-family: 'Roboto', sans-serif;
+    padding-bottom: 25px;
+    color: #333;
+}
+
+.input-group {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.input-group label {
+    display: block; /* Faz com que o rótulo ocupe uma linha inteira */
+ 
+    font-size: 14px;
+    color: #333;
+    font-weight: 500;
+}
+
+.input-container {
+    position: relative;
+    width: 100%;
+}
+
+.input-container input {
+    padding: 12px 12px 12px 35px; /* Mais espaçamento interno */
+    border: 1px solid #E1E1E1;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: all 0.3s ease-in-out;
+    width: 100%; /* Garantir que o campo ocupe toda a largura do contêiner */
+}
+
+.input-container input:focus {
+    border-color: #5B73C5;
+    background-color: #F3F5FF;
+    outline: none;
+    box-shadow: 0 0 12px rgba(91, 115, 197, 0.2); /* Sombra mais suave */
+}
+
+.input-container .fa-user, .fa-envelope, .fa-lock {
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 20px;
+    color: #999;
+}
+
+.error {
+    color: red;
+    font-size: 13px;
+    margin-top: 5px;
+}
+
+.btn {
+    width: 100%;
+    padding: 14px;
+    font-size: 18px;
+    background-color: #5B73C5;
+    color: white;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+}
+
+.btn:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+}
+
+.btn:hover {
+    background-color: #4A5F94;
+    transform: translateY(-2px); /* Suave efeito de "elevação" */
+}
+
+.google-register {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+}
+
+.google-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 25px;
+    background-color: #DB4437; /* Cor do Google mais vibrante */
+    color: white;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease-in-out;
+}
+
+.google-button:hover {
+    background-color: #C1351D; /* Cor mais escura do Google */
+    transform: translateY(-2px); /* Efeito de "elevação" ao passar o mouse */
+}
+
+.google-icon {
+    width: 24px;
+    height: 24px;
+    margin-right: 15px;
+}
+
+.google-button span {
+    font-size: 16px;
+}
+
+.already-account {
+    margin-top: 25px;
+    font-size: 14px;
+    color: #666;
+}
+
+.already-account a {
+    color: #5B73C5;
+    text-decoration: none;
+}
+
+.already-account a:hover {
+    text-decoration: underline;
+}

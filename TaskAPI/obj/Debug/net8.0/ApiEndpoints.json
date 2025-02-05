@@ -1,5 +1,21 @@
 [
   {
+    "ContainingType": "TaskAPI.Controllers.AuthController",
+    "Method": "Login",
+    "RelativePath": "api/Auth/login",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "loginDTO",
+        "Type": "TaskAPI.DTOs.UserDTO.LoginDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "TaskAPI.Controllers.UserController",
     "Method": "Register",
     "RelativePath": "api/User",
