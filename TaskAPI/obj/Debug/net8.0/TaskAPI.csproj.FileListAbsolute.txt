@@ -27,7 +27,6 @@ C:\Users\alves\Desktop\Task\TaskAPI\obj\Debug\net8.0\staticwebassets\msbuild.bui
 C:\Users\alves\Desktop\Task\TaskAPI\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.TaskAPI.props
 C:\Users\alves\Desktop\Task\TaskAPI\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.TaskAPI.props
 C:\Users\alves\Desktop\Task\TaskAPI\obj\Debug\net8.0\staticwebassets.pack.json
-C:\Users\alves\Desktop\Task\TaskAPI\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
 C:\Users\alves\Desktop\Task\TaskAPI\obj\Debug\net8.0\TaskAPI.csproj.Up2Date
 C:\Users\alves\Desktop\Task\TaskAPI\obj\Debug\net8.0\TaskAPI.dll
 C:\Users\alves\Desktop\Task\TaskAPI\obj\Debug\net8.0\refint\TaskAPI.dll

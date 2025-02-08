@@ -39,5 +39,11 @@ namespace TaskAPI.Repository
             var email = await _appDbContext.Users.FirstOrDefaultAsync(u => u.Email == user.Email);
             return email;
         }
+        public async Task<UserModel> GetUserById(int userId)
+        {
+            return await _appDbContext.Users.FirstOrDefaultAsync(u => u.Id == userId);
+        }
+
+
     }
 }

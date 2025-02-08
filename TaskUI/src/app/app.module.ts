@@ -1,18 +1,22 @@
 import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
+import { BrowserModule, provideClientHydration } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { RegisterComponent } from './Components/register/register.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule, provideHttpClient, withFetch } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LoginComponent } from './Components/login/login.component';
+import { DashboardComponent } from './Components/dashboard/dashboard.component';
+import { TokenInterceptor } from '../Interceptors/token.interceptor';
+import { AuthGuard } from '../Guards/auth.guard';
 
 @NgModule({
   declarations: [
     AppComponent,
     RegisterComponent,
-    LoginComponent
+    LoginComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
@@ -21,7 +25,17 @@ import { LoginComponent } from './Components/login/login.component';
     ReactiveFormsModule,
     FormsModule
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: TokenInterceptor,
+      multi: true, 
+    },
+    AuthGuard,
+    
+    provideClientHydration(),
+    provideHttpClient(withFetch()) 
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

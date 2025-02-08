@@ -1,0 +1,146 @@
+<div class="dashboard-container">
+  <header class="header">
+    <div class="header-content">
+      <h1>Dashboard</h1>
+      <div class="user-info">
+        <span>Bem-vindo, <strong>{{ unique_name }}</strong></span>
+        <button class="logout-btn" (click)="logout()">Sair</button>
+      </div>
+    </div>
+  </header>
+
+  <div class="main-layout">
+    <aside class="sidebar">
+      <nav class="sidebar-nav">
+        <ul>
+          <li><a href="#"><i class="fas fa-tasks"></i> Tarefas</a></li>
+          <li *ngIf="role === 'Admin'"><a href="#"><i class="fas fa-users"></i> Usuários</a></li>
+          <li *ngIf="role === 'Admin'"><a href="#"><i class="fas fa-chart-line"></i> Estatísticas</a></li>
+        </ul>
+      </nav>
+    </aside>
+
+    <main class="main-content">
+      <div class="search-container">
+        <input type="text" [(ngModel)]="searchQuery" (input)="filterTasks()" placeholder="Pesquise por tarefas...">
+        <button class="search-btn"><i class="fas fa-search"></i></button>
+      </div>
+
+      <div class="tasks-container">
+        <div class="tasks-grid">
+          <div *ngFor="let task of tasks" class="task-card" (click)="openViewEditModal(task)">
+            <div class="task-header">
+              <h4>{{ task.name }}</h4>
+              <span class="task-status" [ngClass]="{'public': task.isPublic, 'private': !task.isPublic}">
+                {{ task.isPublic ? 'Pública' : 'Privada' }}
+              </span>
+            </div>
+            <p>{{ task.description }}</p>
+            <div class="task-footer">
+              <span class="task-date">Criada em: {{ task.dataCriacao | date }}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <button class="floating-btn" (click)="openCreateTaskModal()">
+        <i class="fas fa-plus"></i>
+      </button>
+    </main>
+  </div>
+
+  <div *ngIf="isCreateModalOpen" class="modal" (click)="closeCreateTaskModal()">
+    <div class="modal-content" (click)="$event.stopPropagation()">
+      <h3>Criar Tarefa</h3>
+      <form [formGroup]="taskForm" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+          <label for="name">Nome</label>
+          <input id="name" formControlName="name" type="text" />
+        </div>
+        <div class="form-group">
+          <label for="description">Descrição</label>
+          <textarea id="description" formControlName="description"></textarea>
+        </div>
+        <div class="form-group">
+          <label for="isPublic">Tarefa Pública</label>
+          <div class="toggle-container">
+            <span>Não</span>
+            <label class="switch">
+              <input type="checkbox" formControlName="isPublic" />
+              <span class="slider"></span>
+            </label>
+            <span>Sim</span>
+          </div>
+        </div>
+        
+        <div class="form-actions">
+          <button type="submit" [disabled]="taskForm.invalid">Salvar</button>
+          <button type="button" (click)="closeCreateTaskModal()">Fechar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div *ngIf="isViewEditModalOpen" class="modal" (click)="closeViewEditModal()">
+    <div class="modal-content" (click)="$event.stopPropagation()">
+      <h3>{{ isEditing ? 'Editar Tarefa' : 'Visualizar Tarefa' }}</h3>
+  
+      <div *ngIf="!isEditing">
+        <p><strong>Nome:</strong> {{ selectedTask?.name }}</p>
+        <p><strong>Descrição:</strong> {{ selectedTask?.description }}</p>
+        <p><strong>Status:</strong> {{ selectedTask?.isPublic ? 'Pública' : 'Privada' }}</p>
+        <p><strong>Criada em:</strong> {{ selectedTask?.dataCriacao | date }}</p>
+        <div class="form-actions-view">
+        <button (click)="openEditMode()">Editar</button>
+        <button (click)="openDeleteConfirmationModal()">Excluir</button>
+      </div>
+      </div>
+  
+      <div *ngIf="isEditing">
+        <form [formGroup]="taskForm" (ngSubmit)="onSubmit()">
+          <div class="form-group">
+            <label for="name">Nome</label>
+            <input id="name" formControlName="name" type="text" />
+          </div>
+          <div class="form-group">
+            <label for="description">Descrição</label>
+            <textarea id="description" formControlName="description"></textarea>
+          </div>
+          <div class="form-group">
+            <label for="isPublic">Tarefa Pública</label>
+            <div class="toggle-container">
+              <span>Não</span>
+              <label class="switch">
+                <input type="checkbox" formControlName="isPublic" />
+                <span class="slider"></span>
+              </label>
+              <span>Sim</span>
+            </div>
+          </div>
+          <div class="form-actions">
+            <button type="submit" [disabled]="taskForm.invalid">Salvar</button>
+            <button type="button" (click)="closeViewEditModal()">Fechar</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  
+    </div>
+  
+
+  <div *ngIf="isDeleteModalOpen" class="modal">
+    <div class="modal-content">
+      <h3>Você tem certeza que deseja excluir esta tarefa?</h3>
+      <div class="modal-actions">
+        <button (click)="confirmDeletion()" class="confirm-btn">Sim, excluir</button>
+        <button (click)="closeDeleteConfirmationModal()" class="cancel-btn">Cancelar</button>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="footer-content">
+      <p>&copy; 2023 Sua Empresa. Todos os direitos reservados.</p>
+    </div>
+  </footer>
+</div>

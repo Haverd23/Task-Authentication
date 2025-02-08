@@ -6,5 +6,8 @@ namespace TaskAPI.Repository.Interfaces
     {
         Task<UserModel> CreateUser(UserModel user);
         Task<UserModel> GetUserByEmail(UserModel user);
+        Task<UserModel> GetUserById(int userId);
+
+
     }
 }

@@ -22,6 +22,7 @@ builder.Services.AddDbContext<appDbContext>(options =>
 );
 
 builder.Services.AddScoped<IUserRepository, UserRepository>();
+builder.Services.AddScoped<ITaskRepository, TaskRepository>();
 builder.Services.AddScoped<PasswordHasher>();
 builder.Services.AddScoped<TokenService>();
 

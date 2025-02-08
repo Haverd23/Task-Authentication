@@ -3,28 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\alves\\Desktop\\Task\\TaskAPI\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{2F4E5123-EC65-4A5B-AF95-B1C92916805E}|TaskAPI.csproj|c:\\users\\alves\\desktop\\task\\taskapi\\services\\passwordhasher.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2F4E5123-EC65-4A5B-AF95-B1C92916805E}|TaskAPI.csproj|solutionrelative:services\\passwordhasher.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{2F4E5123-EC65-4A5B-AF95-B1C92916805E}|TaskAPI.csproj|c:\\users\\alves\\desktop\\task\\taskapi\\services\\tokenservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2F4E5123-EC65-4A5B-AF95-B1C92916805E}|TaskAPI.csproj|solutionrelative:services\\tokenservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2F4E5123-EC65-4A5B-AF95-B1C92916805E}|TaskAPI.csproj|c:\\users\\alves\\desktop\\task\\taskapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2F4E5123-EC65-4A5B-AF95-B1C92916805E}|TaskAPI.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2F4E5123-EC65-4A5B-AF95-B1C92916805E}|TaskAPI.csproj|c:\\users\\alves\\desktop\\task\\taskapi\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2F4E5123-EC65-4A5B-AF95-B1C92916805E}|TaskAPI.csproj|solutionrelative:controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2F4E5123-EC65-4A5B-AF95-B1C92916805E}|TaskAPI.csproj|c:\\users\\alves\\desktop\\task\\taskapi\\repository\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2F4E5123-EC65-4A5B-AF95-B1C92916805E}|TaskAPI.csproj|solutionrelative:repository\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{2F4E5123-EC65-4A5B-AF95-B1C92916805E}|TaskAPI.csproj|c:\\users\\alves\\desktop\\task\\taskapi\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2F4E5123-EC65-4A5B-AF95-B1C92916805E}|TaskAPI.csproj|solutionrelative:controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2F4E5123-EC65-4A5B-AF95-B1C92916805E}|TaskAPI.csproj|c:\\users\\alves\\desktop\\task\\taskapi\\dtos\\userdto\\logindto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2F4E5123-EC65-4A5B-AF95-B1C92916805E}|TaskAPI.csproj|solutionrelative:dtos\\userdto\\logindto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -47,79 +35,40 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "PasswordHasher.cs",
-              "DocumentMoniker": "C:\\Users\\alves\\Desktop\\Task\\TaskAPI\\Services\\PasswordHasher.cs",
-              "RelativeDocumentMoniker": "Services\\PasswordHasher.cs",
-              "ToolTip": "C:\\Users\\alves\\Desktop\\Task\\TaskAPI\\Services\\PasswordHasher.cs",
-              "RelativeToolTip": "Services\\PasswordHasher.cs",
-              "ViewState": "AgIAABAAAAAAAAAAAAAQwAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-05T14:56:16.943Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "UserRepository.cs",
-              "DocumentMoniker": "C:\\Users\\alves\\Desktop\\Task\\TaskAPI\\Repository\\UserRepository.cs",
-              "RelativeDocumentMoniker": "Repository\\UserRepository.cs",
-              "ToolTip": "C:\\Users\\alves\\Desktop\\Task\\TaskAPI\\Repository\\UserRepository.cs",
-              "RelativeToolTip": "Repository\\UserRepository.cs",
-              "ViewState": "AgIAABAAAAAAAAAAAAAQwCYAAABiAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-05T14:52:18.524Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "UserController.cs",
-              "DocumentMoniker": "C:\\Users\\alves\\Desktop\\Task\\TaskAPI\\Controllers\\UserController.cs",
-              "RelativeDocumentMoniker": "Controllers\\UserController.cs",
-              "ToolTip": "C:\\Users\\alves\\Desktop\\Task\\TaskAPI\\Controllers\\UserController.cs",
-              "RelativeToolTip": "Controllers\\UserController.cs",
-              "ViewState": "AgIAABkAAAAAAAAAAAAQwBIAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-05T13:43:29.007Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "AuthController.cs",
-              "DocumentMoniker": "C:\\Users\\alves\\Desktop\\Task\\TaskAPI\\Controllers\\AuthController.cs",
-              "RelativeDocumentMoniker": "Controllers\\AuthController.cs",
-              "ToolTip": "C:\\Users\\alves\\Desktop\\Task\\TaskAPI\\Controllers\\AuthController.cs",
-              "RelativeToolTip": "Controllers\\AuthController.cs",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAAAA4AAAA4AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-05T13:42:52.209Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
               "Title": "TokenService.cs",
               "DocumentMoniker": "C:\\Users\\alves\\Desktop\\Task\\TaskAPI\\Services\\TokenService.cs",
               "RelativeDocumentMoniker": "Services\\TokenService.cs",
               "ToolTip": "C:\\Users\\alves\\Desktop\\Task\\TaskAPI\\Services\\TokenService.cs",
               "RelativeToolTip": "Services\\TokenService.cs",
-              "ViewState": "AgIAAAsAAAAAAAAAAAAAwAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-05T13:42:45.872Z",
+              "WhenOpened": "2025-02-07T21:26:06.294Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\alves\\Desktop\\Task\\TaskAPI\\Program.cs",
-              "RelativeDocumentMoniker": "Program.cs",
-              "ToolTip": "C:\\Users\\alves\\Desktop\\Task\\TaskAPI\\Program.cs",
-              "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAACgAAAAAAAAAAAAAAD0AAAADAAAAAAAAAA==",
+              "Title": "LoginDTO.cs",
+              "DocumentMoniker": "C:\\Users\\alves\\Desktop\\Task\\TaskAPI\\DTOs\\UserDTO\\LoginDTO.cs",
+              "RelativeDocumentMoniker": "DTOs\\UserDTO\\LoginDTO.cs",
+              "ToolTip": "C:\\Users\\alves\\Desktop\\Task\\TaskAPI\\DTOs\\UserDTO\\LoginDTO.cs",
+              "RelativeToolTip": "DTOs\\UserDTO\\LoginDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAwAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-05T12:00:45.539Z",
+              "WhenOpened": "2025-02-07T21:19:57.864Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "AuthController.cs",
+              "DocumentMoniker": "C:\\Users\\alves\\Desktop\\Task\\TaskAPI\\Controllers\\AuthController.cs",
+              "RelativeDocumentMoniker": "Controllers\\AuthController.cs",
+              "ToolTip": "C:\\Users\\alves\\Desktop\\Task\\TaskAPI\\Controllers\\AuthController.cs",
+              "RelativeToolTip": "Controllers\\AuthController.cs",
+              "ViewState": "AgIAACYAAAAAAAAAAAAAACwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-07T21:05:27.266Z",
               "EditorCaption": ""
             }
           ]

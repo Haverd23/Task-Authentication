@@ -7,20 +7,8 @@
       "RelativeMoniker": "D:0:0:{2F4E5123-EC65-4A5B-AF95-B1C92916805E}|TaskAPI.csproj|solutionrelative:controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2F4E5123-EC65-4A5B-AF95-B1C92916805E}|TaskAPI.csproj|c:\\users\\alves\\desktop\\task\\taskapi\\repository\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2F4E5123-EC65-4A5B-AF95-B1C92916805E}|TaskAPI.csproj|solutionrelative:repository\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2F4E5123-EC65-4A5B-AF95-B1C92916805E}|TaskAPI.csproj|c:\\users\\alves\\desktop\\task\\taskapi\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2F4E5123-EC65-4A5B-AF95-B1C92916805E}|TaskAPI.csproj|solutionrelative:controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2F4E5123-EC65-4A5B-AF95-B1C92916805E}|TaskAPI.csproj|c:\\users\\alves\\desktop\\task\\taskapi\\services\\tokenservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2F4E5123-EC65-4A5B-AF95-B1C92916805E}|TaskAPI.csproj|solutionrelative:services\\tokenservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2F4E5123-EC65-4A5B-AF95-B1C92916805E}|TaskAPI.csproj|c:\\users\\alves\\desktop\\task\\taskapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2F4E5123-EC65-4A5B-AF95-B1C92916805E}|TaskAPI.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{2F4E5123-EC65-4A5B-AF95-B1C92916805E}|TaskAPI.csproj|c:\\users\\alves\\desktop\\task\\taskapi\\dtos\\userdto\\logindto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2F4E5123-EC65-4A5B-AF95-B1C92916805E}|TaskAPI.csproj|solutionrelative:dtos\\userdto\\logindto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -30,7 +18,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Bookmark",
@@ -43,27 +31,14 @@
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "UserRepository.cs",
-              "DocumentMoniker": "C:\\Users\\alves\\Desktop\\Task\\TaskAPI\\Repository\\UserRepository.cs",
-              "RelativeDocumentMoniker": "Repository\\UserRepository.cs",
-              "ToolTip": "C:\\Users\\alves\\Desktop\\Task\\TaskAPI\\Repository\\UserRepository.cs",
-              "RelativeToolTip": "Repository\\UserRepository.cs",
-              "ViewState": "AgIAABAAAAAAAAAAAAAQwCYAAABiAAAAAAAAAA==",
+              "Title": "LoginDTO.cs",
+              "DocumentMoniker": "C:\\Users\\alves\\Desktop\\Task\\TaskAPI\\DTOs\\UserDTO\\LoginDTO.cs",
+              "RelativeDocumentMoniker": "DTOs\\UserDTO\\LoginDTO.cs",
+              "ToolTip": "C:\\Users\\alves\\Desktop\\Task\\TaskAPI\\DTOs\\UserDTO\\LoginDTO.cs",
+              "RelativeToolTip": "DTOs\\UserDTO\\LoginDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAwAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-05T14:52:18.524Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "UserController.cs",
-              "DocumentMoniker": "C:\\Users\\alves\\Desktop\\Task\\TaskAPI\\Controllers\\UserController.cs",
-              "RelativeDocumentMoniker": "Controllers\\UserController.cs",
-              "ToolTip": "C:\\Users\\alves\\Desktop\\Task\\TaskAPI\\Controllers\\UserController.cs",
-              "RelativeToolTip": "Controllers\\UserController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-05T13:43:29.007Z",
+              "WhenOpened": "2025-02-07T21:19:57.864Z",
               "EditorCaption": ""
             },
             {
@@ -74,35 +49,9 @@
               "RelativeDocumentMoniker": "Controllers\\AuthController.cs",
               "ToolTip": "C:\\Users\\alves\\Desktop\\Task\\TaskAPI\\Controllers\\AuthController.cs",
               "RelativeToolTip": "Controllers\\AuthController.cs",
-              "ViewState": "AgIAABYAAAAAAAAAAAAQwCgAAAA5AAAAAAAAAA==",
+              "ViewState": "AgIAACYAAAAAAAAAAAAAACwAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-05T13:42:52.209Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "TokenService.cs",
-              "DocumentMoniker": "C:\\Users\\alves\\Desktop\\Task\\TaskAPI\\Services\\TokenService.cs",
-              "RelativeDocumentMoniker": "Services\\TokenService.cs",
-              "ToolTip": "C:\\Users\\alves\\Desktop\\Task\\TaskAPI\\Services\\TokenService.cs",
-              "RelativeToolTip": "Services\\TokenService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-05T13:42:45.872Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\alves\\Desktop\\Task\\TaskAPI\\Program.cs",
-              "RelativeDocumentMoniker": "Program.cs",
-              "ToolTip": "C:\\Users\\alves\\Desktop\\Task\\TaskAPI\\Program.cs",
-              "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAAAoAAAAAAAAAAAAAAD0AAAADAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-05T12:00:45.539Z",
+              "WhenOpened": "2025-02-07T21:05:27.266Z",
               "EditorCaption": ""
             }
           ]

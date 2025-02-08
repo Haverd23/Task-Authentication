@@ -16,6 +16,7 @@ export class LoginComponent implements OnInit {
   loginStatus: { success: boolean; message: string } | null = null;
   errorEmail: string | null = null; 
   errorPassword: string | null = null;
+  
 
   constructor(private fb: FormBuilder, private auth: AuthService, private userStore: UserStoreService,
      private router: Router){}
@@ -27,41 +28,44 @@ export class LoginComponent implements OnInit {
     })
   }
 
-  onLogin(){
-    if(this.loginForm.valid){
+  onLogin() {
+    if (this.loginForm.valid) {
       this.errorEmail = null;
       this.errorPassword = null;
       this.auth.login(this.loginForm.value).pipe(
-        catchError(error =>{
-          if(error.status == 404){
+        catchError(error => {
+          if (error.status === 404) {
             this.errorEmail = error.error.message;
-          }
-          else if(error.status == 401){
+          } else if (error.status === 401) {
             this.errorPassword = error.error.message;
-          }
-          else{
+          } else {
             this.showStatusMessage(false, 'Erro desconhecido, tente novamente mais tarde.');
           }
           return of(null);
         })
-      ).subscribe(response =>{
-        if(response){
+      ).subscribe(response => {
+        if (response) {
           console.log('Resposta do servidor:', response);
           const token = response.token;
+          const refreshToken = response.refreshToken;
           this.auth.storeToken(token);
+          this.auth.storeRefreshToken(refreshToken);
           var tokenPayLoad = this.auth.decodedToken();
+          
+          localStorage.setItem('unique_name', tokenPayLoad.unique_name);
+          localStorage.setItem('role', tokenPayLoad.role);
+          
           this.userStore.setFullNameForStore(tokenPayLoad.unique_name);
           this.userStore.setRoleForStore(tokenPayLoad.role);
-
+  
           this.showStatusMessage(true, 'Login realizado com sucesso!');
-          
-     
         }
       });
-    }else{
+    } else {
       console.log("Formulário Inválido");
-
     }
+  
+  
   }
 
   showStatusMessage(success: boolean, message: string) {
@@ -70,7 +74,7 @@ export class LoginComponent implements OnInit {
     setTimeout(() => {
       
       this.loginStatus = null;
-      this.router.navigate(['register'])
+      this.router.navigate(['dashboard'])
 
 
     }, 3000);
