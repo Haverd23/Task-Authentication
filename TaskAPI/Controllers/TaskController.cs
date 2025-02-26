@@ -51,7 +51,13 @@ namespace TaskAPI.Controllers
         {
             try
             {
-                var userId = int.Parse(User.FindFirst(ClaimTypes.NameIdentifier)?.Value);
+                var userIdClaim = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+                if (string.IsNullOrEmpty(userIdClaim))
+                {
+                    return Unauthorized("Usuário não autenticado.");
+                }
+
+                var userId = int.Parse(userIdClaim);
                 var user = await _taskRepository.GetByIdAsync(userId);
 
                 if (user == null)
@@ -64,6 +70,26 @@ namespace TaskAPI.Controllers
                 if (tarefas == null || !tarefas.Any())
                 {
                     return NotFound("Nenhuma tarefa privada encontrada.");
+                }
+
+                return Ok(tarefas);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, $"Erro interno do servidor: {ex.Message}");
+            }
+        
+        }
+        [HttpGet("public")]
+        public async Task<IActionResult> GetPublicTasks()
+        {
+            try
+            {
+                var tarefas = await _taskRepository.GetPublicTasks();
+
+                if (tarefas == null || !tarefas.Any())
+                {
+                    return NotFound("Nenhuma tarefa pública encontrada.");
                 }
 
                 return Ok(tarefas);

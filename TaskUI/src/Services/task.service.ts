@@ -18,6 +18,10 @@ export class TaskService {
     return this.http.get<PrivateTask[]>(`${this.apiUrl}/private`);
     }
 
+    getPublicTasks(): Observable<PrivateTask[]> {
+      return this.http.get<PrivateTask[]>(`${this.apiUrl}/public`);
+      }
+
   delete(id: number): Observable<any>{
     return this.http.delete<any>(`${this.apiUrl}/delete/${id}`);
   }

@@ -16,6 +16,8 @@ export class AuthService {
   constructor(private http: HttpClient, private router: Router) { }
 
   login(obj: LoginInterface): Observable<LoginResponse> {
+    console.log('Login attempt with:', obj); 
+
     return this.http.post<LoginResponse>(`${this.url}/login`, obj).pipe(
       tap((response: LoginResponse) => {
         console.log('Login response:', response); 

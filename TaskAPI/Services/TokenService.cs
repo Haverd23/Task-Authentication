@@ -37,7 +37,7 @@ namespace TaskAPI.Services
             var tokenDescriptor = new SecurityTokenDescriptor
             {
                 Subject = identity,
-                Expires = DateTime.UtcNow.AddMinutes(1),
+                Expires = DateTime.UtcNow.AddMinutes(8),
                 SigningCredentials = credentials
             };
 

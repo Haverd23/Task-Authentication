@@ -10,20 +10,27 @@ import { LoginComponent } from './Components/login/login.component';
 import { DashboardComponent } from './Components/dashboard/dashboard.component';
 import { TokenInterceptor } from '../Interceptors/token.interceptor';
 import { AuthGuard } from '../Guards/auth.guard';
+import { TaskPublicComponent } from './Components/task-public/task-public.component';
+import { UsuariosComponent } from './Components/usuarios/usuarios.component';
+import { EstatisticasComponent } from './Components/estatisticas/estatisticas.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     RegisterComponent,
     LoginComponent,
-    DashboardComponent
+    DashboardComponent,
+    TaskPublicComponent,
+    UsuariosComponent,
+    EstatisticasComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    
   ],
   providers: [
     {

@@ -1,0 +1,83 @@
+<div class="community-container">
+  <header class="header">
+    <div class="header-content">
+      <h1>Tarefas Públicas</h1>
+      <div class="user-info">
+        <span>Bem-vindo, <strong>{{ unique_name }}</strong></span>
+        <button class="logout-btn" (click)="logout()">Sair</button>
+      </div>
+    </div>
+  </header>
+
+  <div class="main-layout">
+    <aside class="sidebar">
+      <nav class="sidebar-nav">
+        <ul>
+          <li><a routerLink="/dashboard"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
+          <li *ngIf="role === 'Admin'"><a href="/usuarios"><i class="fas fa-users"></i> Usuários</a></li>
+          <li *ngIf="role === 'Admin'"><a href="/statistics"><i class="fas fa-chart-line"></i> Estatísticas</a></li>
+        </ul>
+      </nav>
+    </aside>
+    <main class="main-content">
+      <div class="search-container">
+        <input type="text" [(ngModel)]="searchQuery" (input)="filterPublicTasks()" placeholder="Pesquise por tarefas públicas...">
+        <button class="search-btn"><i class="fas fa-search"></i></button>
+      </div>
+
+      <div class="tasks-container">
+        <div class="tasks-grid">
+          <div *ngFor="let task of publicTasks" class="task-card" (click)="openViewEditModal(task)">
+            <div class="task-header">
+              <h4 [ngClass]="{'short-title': task.name.length < 20}">{{ task.name }}</h4>
+              <span class="task-status public">Pública</span>
+            </div>
+            
+            <div class="task-description">
+              <p>
+                {{ task.showFullDescription ? task.description : (isDescriptionLong(task) ? (task.description | slice:0:characterLimit) + '...' : task.description) }}
+              </p>
+              <span *ngIf="isDescriptionLong(task)" class="view-more" (click)="toggleDescription(task, $event)">
+                {{ task.showFullDescription ? 'Ver Menos' : 'Ver Mais' }}
+              </span>
+            </div>
+        
+            <div class="task-footer">
+              <span class="task-date">Criada em: {{ task.dataCriacao | date }}</span>
+              <button *ngIf="role === 'Admin'" class="delete-btn" (click)="openDeleteModal(task)" style="margin-left: 10px;">Excluir</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+<div *ngIf="isViewEditModalOpen" class="modal" (click)="closeViewEditModal()">
+  <div class="modal-content" (click)="$event.stopPropagation()">
+    <h3>Visualizar Tarefa</h3>
+    <p class="modal-title"><strong>Nome:</strong> {{ selectedTask?.name }}</p>
+    <p class="modal-description"><strong>Descrição:</strong> {{ selectedTask?.description }}</p>
+    <p><strong>Criada em:</strong> {{ selectedTask?.dataCriacao | date }}</p>
+    <div class="form-actions-view">
+      <button (click)="closeViewEditModal()">Fechar</button>
+    </div>
+  </div>
+</div>
+
+  <div *ngIf="isDeleteModalOpen" class="modal" (click)="closeDeleteModal()">
+    <div class="modal-content" (click)="$event.stopPropagation()">
+      <h3 style="color: #e74c3c;">Confirmar Exclusão</h3>
+      <p>Você tem certeza que deseja excluir a tarefa <strong>"{{ selectedTask?.name }}"</strong>? Esta ação não pode ser desfeita.</p>
+      <div class="form-actions-view">
+        <button class="delete-btn" (click)="deleteTask()" style="margin-right: 10px;">Sim, excluir</button>
+        <button (click)="closeDeleteModal()">Cancelar</button>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="footer-content">
+      <p>&copy; 2023 Todos os direitos reservados.</p>
+    </div>
+  </footer>
+</div>

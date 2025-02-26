@@ -1,0 +1,66 @@
+<div class="community-container">
+    <header class="header">
+      <div class="header-content">
+        <h1>Usuários</h1>
+        <div class="user-info">
+          <span>Bem-vindo, <strong>{{ unique_name }}</strong></span>
+          <button class="logout-btn" (click)="logout()">Sair</button>
+        </div>
+      </div>
+    </header>
+  
+    <div class="main-layout">
+      <aside class="sidebar">
+        <nav class="sidebar-nav">
+          <ul>
+            <li><a href="/community"><i class="fas fa-tasks"></i> Tarefas</a></li>
+            <li><a routerLink="/dashboard"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
+            <li><a href="statistics"><i class="fas fa-chart-line"></i> Estatísticas</a></li>
+
+          </ul>
+        </nav>
+      </aside>
+  
+      <main class="main-content">
+        <div class="users-table-container">
+          <table class="users-table">
+            <thead>
+              <tr>
+                <th>Nome</th>
+                <th>Email</th>
+                <th>Ações</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let user of users">
+                <td>{{ user.name }}</td>
+                <td>{{ user.email }}</td>
+                <td>
+                  <button class="delete-btn" (click)="openDeleteConfirmationModal(user)">Excluir</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </main>
+    </div>
+  
+    <!-- Modal de Confirmação de Exclusão -->
+    <div *ngIf="isDeleteModalOpen" class="modal" (click)="closeDeleteConfirmationModal()">
+      <div class="modal-content" (click)="$event.stopPropagation()">
+        <h3 style="color: #e74c3c;">Confirmar Exclusão</h3>
+        <p>Você tem certeza que deseja excluir o usuário <strong>"{{ selectedUser?.name }}"</strong>? Esta ação não pode ser desfeita.</p>
+        <div class="form-actions-view">
+          <button class="delete-btn" (click)="confirmDeletion()" style="margin-right: 10px;">Sim, excluir</button>
+          <button (click)="closeDeleteConfirmationModal()">Cancelar</button>
+        </div>
+      </div>
+    </div>
+  
+    <footer class="footer">
+      <div class="footer-content">
+        <p>&copy; 2023 Todos os direitos reservados.</p>
+      </div>
+    </footer>
+  </div>
+  

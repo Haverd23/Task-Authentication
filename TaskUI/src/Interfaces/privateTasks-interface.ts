@@ -4,4 +4,5 @@ export class PrivateTask{
     isPublic!:boolean
     dataCriacao!: Date
     id!:number
+    showFullDescription?:boolean;
 }

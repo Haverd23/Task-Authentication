@@ -6,6 +6,8 @@ namespace TaskAPI.Repository.Interfaces
     {
         Task<TaskModel> Create(TaskModel task);
         Task<IEnumerable<TaskModel>> GetPrivateTasks(UserModel user);
+        Task<IEnumerable<TaskModel>> GetPublicTasks();
+
         Task<UserModel> GetByIdAsync(int id);
         Task<TaskModel> Delete(int id);
         Task<TaskModel> Update(TaskModel task);

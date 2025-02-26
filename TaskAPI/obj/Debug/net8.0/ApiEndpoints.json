@@ -32,6 +32,16 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "TaskAPI.Controllers.StatisticsController",
+    "Method": "GetStatistics",
+    "RelativePath": "api/Statistics/GetStatistics",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "TaskAPI.Controllers.TaskController",
     "Method": "CreateTask",
     "RelativePath": "api/Task",
@@ -75,6 +85,16 @@
   },
   {
     "ContainingType": "TaskAPI.Controllers.TaskController",
+    "Method": "GetPublicTasks",
+    "RelativePath": "api/Task/public",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "TaskAPI.Controllers.TaskController",
     "Method": "UpdateTask",
     "RelativePath": "api/Task/update/{id}",
     "HttpMethod": "PUT",
@@ -108,6 +128,32 @@
         "IsRequired": true
       }
     ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "TaskAPI.Controllers.UserController",
+    "Method": "DeleteUser",
+    "RelativePath": "api/User/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "TaskAPI.Controllers.UserController",
+    "Method": "GetAllUsers",
+    "RelativePath": "api/User/All-Users",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
     "ReturnTypes": []
   }
 ]

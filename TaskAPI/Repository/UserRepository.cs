@@ -34,6 +34,11 @@ namespace TaskAPI.Repository
 
 
         }
+        public async Task<IEnumerable<UserModel>> GetAllUsers()
+        {
+            var email = await _appDbContext.Users.ToListAsync();  
+            return email;
+        }
         public async Task<UserModel> GetUserByEmail(UserModel user)
         {
             var email = await _appDbContext.Users.FirstOrDefaultAsync(u => u.Email == user.Email);
@@ -42,6 +47,19 @@ namespace TaskAPI.Repository
         public async Task<UserModel> GetUserById(int userId)
         {
             return await _appDbContext.Users.FirstOrDefaultAsync(u => u.Id == userId);
+        }
+
+        public async Task<bool> DeleteUser(int userId)
+        {
+            var user = await _appDbContext.Users.FirstOrDefaultAsync(u => u.Id == userId);
+            if (user == null)
+            {
+                return false;  
+            }
+
+            _appDbContext.Users.Remove(user);
+            await _appDbContext.SaveChangesAsync();
+            return true;  
         }
 
 

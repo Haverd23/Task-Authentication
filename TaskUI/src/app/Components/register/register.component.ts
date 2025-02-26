@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { UserService } from '../../../Services/user.service';
 import { catchError } from 'rxjs/operators';
 import { of } from 'rxjs';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-register',
@@ -15,7 +16,7 @@ export class RegisterComponent implements OnInit {
   registrationStatus: { success: boolean; message: string } | null = null;
   emailError: string | null = null; 
 
-  constructor(private fb: FormBuilder, private userService: UserService) {}
+  constructor(private fb: FormBuilder, private userService: UserService, private router: Router) {}
 
   ngOnInit(): void {
     this.loginForm = this.fb.group({
@@ -55,6 +56,7 @@ export class RegisterComponent implements OnInit {
 
     setTimeout(() => {
       this.registrationStatus = null;
+      this.router.navigate(['login'])
     }, 3000);
   }
 }

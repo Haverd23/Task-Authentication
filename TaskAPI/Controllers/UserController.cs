@@ -48,5 +48,45 @@ namespace TaskAPI.Controllers
                 return StatusCode(500, "Ocorreu um erro interno.");
             }
         }
+
+        [HttpGet("All-Users")]
+        public async Task<IActionResult> GetAllUsers()
+        {
+            try
+            {
+                var user = await _userRepository.GetAllUsers();
+                if (user == null)
+                {
+                    return NotFound("Nenhum usuário encontrado.");
+
+                }
+                return Ok(user);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, $"Erro interno do servidor: {ex.Message}");
+
+            }
+
+        }
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> DeleteUser(int id)
+        {
+            try
+            {
+                var isDeleted = await _userRepository.DeleteUser(id);
+                if (!isDeleted)
+                {
+                    return NotFound($"Usuário com ID {id} não encontrado.");
+                }
+
+                return NoContent();  
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Erro ao excluir usuário.");
+                return StatusCode(500, "Ocorreu um erro interno.");
+            }
+        }
     }
 }

@@ -22,19 +22,21 @@ namespace TaskAPI.Repository
             return task;
             
         }
-        public async Task<IEnumerable<TaskModel>> GetPrivateTasks(UserModel user)
+        public async Task<IEnumerable<TaskModel>> GetPublicTasks()
         {
-            if(user == null) throw new NullReferenceException("Usuário com este email já existe.");
             var query = _appDbContext.Tasks.AsQueryable();
 
-            if (user.Role == "Admin")
-            {
-                query = query.Where(x => x.UserId == user.Id || x.IsPublic == true);
-            }
-            else
-            {
-                query = query.Where(x => x.UserId == user.Id);
-            }
+            query = query.Where(x => x.IsPublic == true);
+
+            return await query.ToListAsync();
+        }
+
+        public async Task<IEnumerable<TaskModel>> GetPrivateTasks(UserModel user)
+        {
+            if(user == null) throw new NullReferenceException();
+            var query = _appDbContext.Tasks.AsQueryable();
+            query = query.Where(x => x.UserId == user.Id);
+            
 
             return await query.ToListAsync();
         }

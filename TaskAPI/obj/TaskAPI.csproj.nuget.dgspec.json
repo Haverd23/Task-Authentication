@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\alves\\Desktop\\Task\\taskapi\\TaskAPI.csproj": {}
+    "C:\\Users\\alves\\Desktop\\Task\\TaskAPI\\TaskAPI.csproj": {}
   },
   "projects": {
-    "C:\\Users\\alves\\Desktop\\Task\\taskapi\\TaskAPI.csproj": {
+    "C:\\Users\\alves\\Desktop\\Task\\TaskAPI\\TaskAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\alves\\Desktop\\Task\\taskapi\\TaskAPI.csproj",
+        "projectUniqueName": "C:\\Users\\alves\\Desktop\\Task\\TaskAPI\\TaskAPI.csproj",
         "projectName": "TaskAPI",
-        "projectPath": "C:\\Users\\alves\\Desktop\\Task\\taskapi\\TaskAPI.csproj",
+        "projectPath": "C:\\Users\\alves\\Desktop\\Task\\TaskAPI\\TaskAPI.csproj",
         "packagesPath": "C:\\Users\\alves\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\alves\\Desktop\\Task\\taskapi\\obj\\",
+        "outputPath": "C:\\Users\\alves\\Desktop\\Task\\TaskAPI\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -96,7 +96,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.102/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.101/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

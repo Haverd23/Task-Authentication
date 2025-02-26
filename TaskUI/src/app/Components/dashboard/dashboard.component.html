@@ -13,9 +13,9 @@
     <aside class="sidebar">
       <nav class="sidebar-nav">
         <ul>
-          <li><a href="#"><i class="fas fa-tasks"></i> Tarefas</a></li>
-          <li *ngIf="role === 'Admin'"><a href="#"><i class="fas fa-users"></i> Usuários</a></li>
-          <li *ngIf="role === 'Admin'"><a href="#"><i class="fas fa-chart-line"></i> Estatísticas</a></li>
+          <li><a href="/community"><i class="fas fa-tasks"></i> Tarefas</a></li>
+          <li *ngIf="role === 'Admin'"><a href="/usuarios"><i class="fas fa-users"></i> Usuários</a></li>
+          <li *ngIf="role === 'Admin'"><a href="/statistics"><i class="fas fa-chart-line"></i> Estatísticas</a></li>
         </ul>
       </nav>
     </aside>
@@ -30,18 +30,33 @@
         <div class="tasks-grid">
           <div *ngFor="let task of tasks" class="task-card" (click)="openViewEditModal(task)">
             <div class="task-header">
-              <h4>{{ task.name }}</h4>
+              <h4 [ngClass]="{'short-title': task.name.length < 20}">{{ task.name }}</h4>
               <span class="task-status" [ngClass]="{'public': task.isPublic, 'private': !task.isPublic}">
                 {{ task.isPublic ? 'Pública' : 'Privada' }}
               </span>
             </div>
-            <p>{{ task.description }}</p>
+            
+            <div class="task-description">
+              <p>
+                {{ task.showFullDescription ? task.description : (isDescriptionLong(task) ? (task.description | slice:0:characterLimit) + '...' : task.description) }}
+              </p>
+              <span *ngIf="isDescriptionLong(task)" class="view-more" (click)="toggleDescription(task, $event)">
+                {{ task.showFullDescription ? 'Ver Menos' : 'Ver Mais' }}
+              </span>
+            </div>
+      
             <div class="task-footer">
               <span class="task-date">Criada em: {{ task.dataCriacao | date }}</span>
             </div>
           </div>
         </div>
       </div>
+      
+      
+      
+      
+      
+      
 
       <button class="floating-btn" (click)="openCreateTaskModal()">
         <i class="fas fa-plus"></i>
@@ -86,8 +101,8 @@
       <h3>{{ isEditing ? 'Editar Tarefa' : 'Visualizar Tarefa' }}</h3>
   
       <div *ngIf="!isEditing">
-        <p><strong>Nome:</strong> {{ selectedTask?.name }}</p>
-        <p><strong>Descrição:</strong> {{ selectedTask?.description }}</p>
+        <p class="modal-title"><strong>Nome:</strong> {{ selectedTask?.name }}</p>
+        <p class="modal-description"><strong>Descrição:</strong> {{ selectedTask?.description }}</p>
         <p><strong>Status:</strong> {{ selectedTask?.isPublic ? 'Pública' : 'Privada' }}</p>
         <p><strong>Criada em:</strong> {{ selectedTask?.dataCriacao | date }}</p>
         <div class="form-actions-view">
@@ -140,7 +155,7 @@
 
   <footer class="footer">
     <div class="footer-content">
-      <p>&copy; 2023 Sua Empresa. Todos os direitos reservados.</p>
+      <p>&copy; 2023 Todos os direitos reservados.</p>
     </div>
   </footer>
 </div>

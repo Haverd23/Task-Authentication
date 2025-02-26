@@ -37,22 +37,22 @@ export class TokenInterceptor implements HttpInterceptor {
   handleUnAuthorizedError(req: HttpRequest<any>, next: HttpHandler) {
     const refreshToken = this.auth.getRefreshToken();
     if (refreshToken) {
-      return this.auth.refreshToken(refreshToken).pipe(
-        switchMap((response: any) => {
-          this.auth.storeToken(response.token);
-          req = req.clone({
-            setHeaders: { Authorization: `Bearer ${response.token}` }
-          });
-          return next.handle(req);
-        }),
-        catchError((error) => {
-          this.auth.logout();
-          return throwError(() => error);
-        })
-      );
+        return this.auth.refreshToken(refreshToken).pipe(
+            switchMap((response: any) => {
+                this.auth.storeToken(response.token);
+                req = req.clone({
+                    setHeaders: { Authorization: `Bearer ${response.token}` }
+                });
+                return next.handle(req);
+            }),
+            catchError((error) => {
+                this.auth.logout();
+                return throwError(() => error);
+            })
+        );
     } else {
-      this.auth.logout();
-      return throwError(() => new Error('No refresh token found'));
+        this.auth.logout();
+        return throwError(() => new Error('No refresh token found'));
     }
-  }
+}
 }

@@ -21,6 +21,8 @@ export class DashboardComponent implements OnInit {
   public selectedTask: PrivateTask | null = null;
   public isEditing: boolean = false;  
   public isDeleteModalOpen: boolean = false;
+  public showFullDescription: boolean = false;
+  public characterLimit: number = 20;
 
 
   constructor(
@@ -61,12 +63,24 @@ export class DashboardComponent implements OnInit {
     this.taskService.getPrivateTasks().subscribe(
       (res) => {
         this.tasks = res;
+        this.showFullDescription = false;
       },
       (error) => {
-        console.error('Erro ao carregar as tarefas privadas:', error);
+        
       }
     );
   }
+  toggleDescription(task: PrivateTask, event: MouseEvent): void {
+    event.stopPropagation();  
+    task.showFullDescription = !task.showFullDescription;
+  }
+
+  isDescriptionLong(task: PrivateTask): boolean {
+    return task.description.length > this.characterLimit;
+  }
+
+  
+  
 
   filterTasks() {
     if (this.searchQuery) {
