@@ -60,17 +60,10 @@ Navegue até o diretório do backend (TaskAPI):
 cd TaskAPI
 ```
 
-Restaure as dependências e publique o projeto:
-
-```bash
-dotnet restore
-dotnet publish -c Release -o ./out
-```
-
 Execute o projeto:
 
 ```bash
-dotnet ./out/TaskAPI.dll
+dotnet run
 ```
 
 O backend estará acessível em `http://localhost:5125`.
@@ -131,6 +124,31 @@ O frontend estará acessível em `http://localhost:4200`.
 - **docker-compose.yml:** Orquestração para os containers do backend, frontend e banco de dados.
 
 ## EndPoints da API
+
+### User
+
+### `POST /api/User`
+
+Faz o Registro de um usuário novo.
+
+**Request Body:**
+
+```json
+{
+  "name": "string",
+  "email": "string",
+  "password": "string"
+}
+```
+"Ao registrar um novo usuário com o email "admin@gmail.com" você terá a role Admin no sistema"
+
+### `GET /api/User/All-Users`
+
+Retorna todos os users registrados no sistema.
+
+### `DELETE /api/User/{id}`
+
+Remove por meio do id determinado usuário do sistema.
 
 ### Autenticação (Auth)
 
