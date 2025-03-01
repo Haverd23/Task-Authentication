@@ -4200,11 +4200,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\alves\\Desktop\\Task\\TaskAPI\\TaskAPI.csproj",
+      "projectUniqueName": "C:\\Users\\alves\\Desktop\\Task-Authentication\\TaskAPI\\TaskAPI.csproj",
       "projectName": "TaskAPI",
-      "projectPath": "C:\\Users\\alves\\Desktop\\Task\\TaskAPI\\TaskAPI.csproj",
+      "projectPath": "C:\\Users\\alves\\Desktop\\Task-Authentication\\TaskAPI\\TaskAPI.csproj",
       "packagesPath": "C:\\Users\\alves\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\alves\\Desktop\\Task\\TaskAPI\\obj\\",
+      "outputPath": "C:\\Users\\alves\\Desktop\\Task-Authentication\\TaskAPI\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

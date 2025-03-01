@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "U5F6FRo8qOE=",
+  "dgSpecHash": "ZnYTIpYheHI=",
   "success": true,
-  "projectFilePath": "C:\\Users\\alves\\Desktop\\Task\\TaskAPI\\TaskAPI.csproj",
+  "projectFilePath": "C:\\Users\\alves\\Desktop\\Task-Authentication\\TaskAPI\\TaskAPI.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\alves\\.nuget\\packages\\automapper\\13.0.1\\automapper.13.0.1.nupkg.sha512",
     "C:\\Users\\alves\\.nuget\\packages\\azure.core\\1.38.0\\azure.core.1.38.0.nupkg.sha512",
