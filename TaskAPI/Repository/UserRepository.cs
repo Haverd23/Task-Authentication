@@ -24,8 +24,12 @@ namespace TaskAPI.Repository
             var existingUser = await _appDbContext.Users.FirstOrDefaultAsync(u => u.Email == user.Email);
             if (existingUser != null) throw new InvalidOperationException("Usuário com este email já existe.");
 
-
+	    if(user.Email == "admin@gmail.com"){
+		user.Role = "Admin";
+	    }
+	    else{
             user.Role = "User";
+	    }
             user.Password = _passwordHasher.HashPassword(user.Password);
             
            _appDbContext.Add(user);
