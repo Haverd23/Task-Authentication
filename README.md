@@ -59,6 +59,10 @@ Navegue até o diretório do backend (TaskAPI):
 ```bash
 cd TaskAPI
 ```
+Altere a string de conexão em appsettings.Development.json
+```
+"DefaultConnection": "Server=localhost;User Id={user id do seu banco de dados};Password={senha do seu banco de dados};Database=TaskApi;Integrated Security=True;TrustServerCertificate=True;"
+```
 
 Execute o projeto:
 
