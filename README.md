@@ -44,6 +44,8 @@ Execute o comando abaixo para iniciar todos os containers (backend, frontend, ba
 docker-compose up --build
 ```
 
+Ao executar o container, verifique se a imagem task-api está em execução. Se necessário, execute-a manualmente.
+
 O backend estará acessível em `http://localhost:5125` e o frontend em `http://localhost:4200`.
 
 O banco de dados SQL Server estará rodando na porta `1433`.
