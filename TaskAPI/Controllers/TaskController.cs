@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System.Security.Claims;
@@ -8,6 +9,7 @@ using TaskAPI.Repository.Interfaces;
 
 namespace TaskAPI.Controllers
 {
+    [Authorize]
     [Route("api/[controller]")]
     [ApiController]
     public class TaskController : ControllerBase
@@ -80,6 +82,7 @@ namespace TaskAPI.Controllers
             }
         
         }
+
         [HttpGet("public")]
         public async Task<IActionResult> GetPublicTasks()
         {
@@ -118,7 +121,6 @@ namespace TaskAPI.Controllers
                 return StatusCode(500, $"Erro interno do servidor: {ex.Message}");
             }
         }
-
         [HttpPut("update/{id}")]
         public async Task<IActionResult> UpdateTask(int id, UpdateTaskDTO updateTaskDto)
         {
