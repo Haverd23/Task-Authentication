@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using TaskAPI.DTOs.UserDTO;
@@ -48,7 +49,7 @@ namespace TaskAPI.Controllers
                 return StatusCode(500, "Ocorreu um erro interno.");
             }
         }
-
+        [Authorize(Roles ="Admin")]
         [HttpGet("All-Users")]
         public async Task<IActionResult> GetAllUsers()
         {
@@ -69,6 +70,7 @@ namespace TaskAPI.Controllers
             }
 
         }
+        [Authorize(Roles = "Admin")]
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteUser(int id)
         {
